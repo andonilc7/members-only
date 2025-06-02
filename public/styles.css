@@ -1,0 +1,228 @@
+* {
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #2f2f3a;
+}
+/* -------------------------------------------------------------------- */
+
+/* header stuff */
+header {
+  background-color: #FFFFFF;
+  padding: 25px 35px;
+}
+
+
+nav {
+  display: flex;
+  background-color: #FFFFFF;
+  gap: 25px;
+  font-size: 1.1rem;
+  /* need this so that the buttons dont stretch vertically! */
+  align-items: center;
+}
+
+nav > * {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: black;
+  background-color: #FFFFFF;
+}
+
+.home-pg-link-cont {
+  flex: 1;
+}
+
+.home-pg-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  background-color: #007aff;
+  border-radius: 10px;
+}
+
+.member-badge {
+  padding: 0
+}
+
+.nav-link:hover {
+  background-color: #005fcc;
+}
+
+.logout-btn {
+  background-color: #DC3545;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.welcome-msg {
+  padding: 8px 0;
+}
+/* -------------------------------------------------------------------- */
+
+/*  main page stuff */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+/* -------------------------------------------------------------------- */
+
+/* auth stuff */
+.main-auth-container {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 22px 40px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 10px;
+}
+
+.main-auth-container > h2 {
+  text-align: center;
+}
+
+/* using auth-form class as general form for logging in, signing up, etc bc all have similar structure */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* align-items: center; */
+}
+
+.auth-form > input {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #2f2f3a;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.auth-form > label {
+  font-size: 16px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+.auth-form > button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #007aff;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  font-size: 16px;
+}
+
+.auth-form > button[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #005fcc;
+}
+
+/* error lists (using for errors.ejs and flashErrors.ejs) */
+.error-list {
+  list-style: none;         /* remove bullets */
+  margin: 10px 0;
+  background-color: #ffe5e5;
+  color: #b30000;
+  border: 1px solid #ffcccc;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+}
+
+.error-list li {
+  margin-bottom: 6px;
+}
+
+.error-list li:last-child {
+  margin-bottom: 0;
+}
+/* -------------------------------------------------------------------- */
+
+
+/* main page stuff (inside of main wrapper) */
+.main-container {
+  /* background-color: white; */
+  max-width: 900px;
+  width: 100%;
+  /* border-radius: 10px; */
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.main-container > h2 {
+  text-align: center;
+  color: white;
+  font-size: 1.7rem;
+  padding-bottom: 10px;
+}
+
+/* messages */
+.messages-container {
+  margin-top: 10px;
+}
+.msg-box {
+  border-radius: 10px;
+  background-color: #e5f6f5;
+  color: #162422;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+}
+
+/* saying if a msg-box is the last child of its parent (messages-container) */
+.msg-box:last-child {
+  margin-bottom: 0
+}
+
+.message-title {
+  font-size: 1.4rem;
+  margin-bottom: 2px;
+  color: #333;
+}
+
+.message-body {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.message-meta {
+  font-size: 0.95rem;
+  color: #888;
+}
+
+.delete-msg-btn {
+  background-color: #DC3545;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.delete-msg-btn:hover {
+  background-color: #c82333;
+  cursor: pointer;
+}

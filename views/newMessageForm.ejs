@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>New Message</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-wrapper">
+    <div class="main-auth-container">
+      <h2>New Message</h2>
+      <!-- doing partials/errors rather than partials/flashErrors -->
+       <!-- because in my current setup im just using flashErrors for logging in but 
+        using validationResult for everything else -->
+      <%- include("partials/errors") %>
+      <form method="POST" action="/new" class="auth-form">
+        <label for="title">Title:</label>
+        <!-- doing "locals.oldInput" so it doesn't fail if oldInput doesn't exist -->
+        <input type="text" name="title" id="title" value="<%= locals.oldInput?.title || '' %>" placeholder="Title" required/>
+
+        <label for="message">Message:</label>
+        <input type="text" name="message" id="message" value="<%= locals.oldInput?.message || '' %>" placeholder="Message" required/>
+  
+        <button type="submit">Create</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+</body>
+</html>

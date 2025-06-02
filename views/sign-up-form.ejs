@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Sign Up Form</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-wrapper">
+    <div class="main-auth-container">
+      <h2>Sign Up</h2>
+      <%- include("partials/errors") %>
+      <form method="POST" action="/sign-up" class="auth-form">
+        <label for="fname">First Name:</label>
+        <!-- note: doing locals.oldInput.... makes sure there is no error when oldInput isn't passed, instead of jusut doing oldInput...-->
+        <input name="fname" id="fname" required value="<%= locals.oldInput?.fname || '' %>"/>
+    
+        <label for="lname">Last Name:</label>
+        <input name="lname" id="lname" required value="<%= locals.oldInput?.lname || '' %>"/>
+    
+        <label for="username">Username (email):</label>
+        <input type="email" name="username" id="username" value="<%= locals.oldInput?.username || '' %>"/>
+    
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="<%= locals.oldInput?.password || '' %>"/>
+  
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" value="<%= locals.oldInput?.confirmPassword || '' %>"/>
+    
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+</body>
+</html>

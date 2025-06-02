@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Login</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-wrapper">
+    <div class="main-auth-container">
+      <h2>Login</h2>
+      <%- include("partials/flashErrors") %>
+      <form method="POST" action="/login" class="auth-form">
+        <label for="username">Username (email):</label>
+        <input type="email" name="username" id="username" value="<%= locals.oldInput?.username || '' %>"/>
+    
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="<%= locals.oldInput?.password || '' %>"/>
+  
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+</body>
+</html>

@@ -1,0 +1,1 @@
+This project is the Clubhouse Members Only project that I developed as part of The Odin Project. I used Express JS for the backend and ejs for the views. I also used PostgreSQL for teh dataabse. This project was mostly for practicing authentication and securing passwords and different roles/permissions.

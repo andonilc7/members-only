@@ -1,0 +1,45 @@
+<!-- views/partials/header.ejs -->
+<header>
+  <nav>
+  <div class="home-pg-link-cont">
+    <a href="/" class="home-pg-link">Clubhouse</a>
+  </div>
+
+  <% if (currentUser) { %>
+    <a href="/new" class="nav-link">+ New Message</a>
+    <!-- this next link is only for users who are not yet members -->
+    <% if (!currentUser.is_member) { %>
+      <a href="/become-member" class="nav-link">Become a Member</a>
+    <% } else if (currentUser.is_member && !currentUser.is_admin) { %>
+      <a href="/become-admin" class="nav-link">Become an Admin</a>
+    <% } %>
+      <p class="welcome-msg">Welcome, <%= currentUser.first_name %>!</p>
+      <% if (currentUser.is_member && !currentUser.is_admin) { %>
+        <span class="member-badge">🌟 Member</span>
+      <% } else if (currentUser.is_member && currentUser.is_admin) {%>
+      <span class="member-badge">🌟 Admin</span>
+      <% } %>
+    <a href="/logout" class="nav-link logout-btn">Logout</a>
+  <% } else { %>
+    <a href="/login" class="nav-link">Login</a>
+    <a href="/sign-up" class="nav-link">Sign Up</a>
+    <% } %>
+  </nav>
+</header>
+
+<!-- <div class="header-top">
+  <h1>Music Store</h1>
+  <form method="GET" action="/items?" class="searchbar-cont">
+    note: when doing GET form, the fields of inputs (name) will be displayed in url as query! (so e.g. ?searchItem=stratocaster) 
+    <button class="searchbar-submit" type="submit">Search</button>
+    <input class="searchbar" placeholder="Search an item..." name="searchItem"/>
+  </form>
+  </form>
+</div>
+
+<div class="nav-cont">
+  <a href="/" class="nav-item">Home</a>
+  <a href="/items" class="nav-item">View Items</a>
+  <a href="/categories/new" class="nav-item">Add Category</a>
+  <a href="/items/new" class="nav-item">Add Item</a>
+</div>   -->

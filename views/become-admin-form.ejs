@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Become an Admin</title>
+</head>
+<body>
+  <%- include("partials/header") %>
+  <div class="main-wrapper">
+    <div class="main-auth-container">
+      <h2>Become an Admin</h2>
+      <!-- doing partials/errors rather than partials/flashErrors -->
+       <!-- because in my current setup im just using flashErrors for logging in but 
+        using validationResult for everything else -->
+      <%- include("partials/errors") %>
+      <form method="POST" action="/become-admin" class="auth-form">
+        <label for="title">Secret Admin Passcode:</label>
+        <!-- doing "locals.oldInput" so it doesn't fail if oldInput doesn't exist -->
+        <input type="password" name="passcode" id="passcode" placeholder="Secret Admin Passcode" required/>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="msg-box">
+  <h3 class="message-title"><%= msgObj.title %></h3>
+  <p class="message-body"><%= msgObj.message %> </p>
+  <!-- added the .is_member check bc needs to be an exclusive member tat entered the secret passcode -->
+  <% if (currentUser && currentUser.is_member) { %>
+    <p class="message-meta"><strong>Author:</strong> <%= msgObj.first_name %> <%= msgObj.last_name %></p>
+    <p class="message-meta"><strong>Created at:</strong> <%= msgObj.created_at %></p>
+    <% if (currentUser.is_admin) { %>
+      <!-- doing a method override so i can use messageRouter.delete(...) rather than having to do post -->
+      <form action="/<%= msgObj.id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete this message?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <button class="delete-msg-btn" type="submit">Delete</button>
+      </form>
+    <% } %>
+  <% } %>
+</div>
