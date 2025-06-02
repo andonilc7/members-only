@@ -1,3 +1,5 @@
 This project is the Clubhouse Members Only project that I developed as part of The Odin Project. I used Express JS for the backend and EJS for server-side rendering of views. PostgreSQL serves as the database. For authentication, I implemented Passport.js with the local strategy, using express-session to manage user sessions. To persist sessions, I set up a session table in the database. The main goal of this project was to practice authentication workflows, password security, and managing different user roles and permissions.
 
+The app is hosted on Render, with the PostgreSQL database managed on Neon.
+
 Link to the project: https://members-only-isy8.onrender.com
