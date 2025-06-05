@@ -58,7 +58,7 @@ function postLogin(req, res, next) {
   })(req, res, next)
 }
 
-function getLogout(req, res) {
+function getLogout(req, res, next) {
   req.logout(function(err) {
     if (err) {
       return next(err);
